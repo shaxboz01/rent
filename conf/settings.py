@@ -34,7 +34,7 @@ EMAIL_HOST_USER = 'shaxbozaxrorov01@gmail.com'
 EMAIL_HOST_PASSWORD = 'tcwk fqow cxuj uqll'
 EMAIL_USE_TLS = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
