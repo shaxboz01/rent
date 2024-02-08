@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+  <!-- about section -->
+{% if about %}
+  {% for about in about %}
+  <section class="about_section layout_padding2-top layout_padding-bottom ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7 px-0">
+          <div class="img-box">
+            <img src="{% static about.image %}" alt="Image">
+
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <div class="detail-box">
+            <h2>
+              {{about.title}}
+            </h2>
+            <p>
+              {{about.body}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+{% endif %}
+
+  <!-- end about section -->
+{% endblock %}

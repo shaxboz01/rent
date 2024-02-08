@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+  <!-- car section -->
+{% if car %}
+{% for car in car %}
+  <section class="car_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+
+        </h2>
+        <p>
+          {{car.page_title}}
+        </p>
+      </div>
+      <div class="car_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="{% static car.image %}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              {{car.title}}
+            </h5>
+            <p>
+              {{car.body}}
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+
+
+{% endblock %}
