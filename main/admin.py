@@ -7,3 +7,4 @@ admin.site.register(Blog),
 admin.site.register(Car),
 admin.site.register(Contact)
 admin.site.register(Advantages)
+# admin.site.register(MyUserManager)

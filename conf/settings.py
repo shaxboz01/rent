@@ -32,6 +32,11 @@ SECRET_KEY = 'django-insecure-oe1_af(-8^!2z4+1c)7(_09t+ppanze4rt6xg0+=c=&tzvz^v8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS = ['*']
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 # SENDING EMAIL
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
@@ -40,7 +45,7 @@ EMAIL_HOST_USER = 'shaxbozaxrorov01@gmail.com'
 EMAIL_HOST_PASSWORD = 'tcwk fqow cxuj uqll'
 EMAIL_USE_TLS = True
 
-ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -100,11 +105,11 @@ DATABASES = {
     }
 }
 
-DATABASE_URL = config('DATABASE_URL', default='postgresql://localhost/localdb')
-
-DATABASES = {
-    'default': dj_database_url.config(default=DATABASE_URL)
-}
+# DATABASE_URL = config('DATABASE_URL', default='postgresql://localhost/localdb')
+#
+# DATABASES = {
+#     'default': dj_database_url.config(default=DATABASE_URL)
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -156,3 +161,4 @@ MEDIA_ROOT = os.path.join( BASE_DIR,   "static /")
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
