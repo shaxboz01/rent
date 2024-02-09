@@ -94,22 +94,22 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Orientrent',
-        'USER': 'postgres',
-        'PASSWORD' : '123',
-        'HOST' : 'localhost',
-        'PORT' : 5432,
-    }
-}
-
-# DATABASE_URL = config('DATABASE_URL', default='postgresql://localhost/localdb')
-#
 # DATABASES = {
-#     'default': dj_database_url.config(default=DATABASE_URL)
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Orientrent',
+#         'USER': 'postgres',
+#         'PASSWORD' : '123',
+#         'HOST' : 'localhost',
+#         'PORT' : 5432,
+#     }
 # }
+
+DATABASE_URL = config('DATABASE_URL', default='postgresql://localhost/localdb')
+
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL)
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
