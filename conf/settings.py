@@ -15,7 +15,7 @@ import os
 import environ
 import dj_database_url
 from dj_config_url import config
-from django.contrib.auth.models import User
+
 
 env = environ.Env()
 environ.Env.read_env()

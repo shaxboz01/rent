@@ -1,4 +1,3 @@
-from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
 from django.urls import reverse
 
@@ -51,4 +50,4 @@ class Advantages(models.Model):
     support = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.title
+        return self.titl
