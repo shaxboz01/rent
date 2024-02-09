@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+import dj_database_url
+from dj_config_url import config
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -94,6 +100,11 @@ DATABASES = {
     }
 }
 
+DATABASE_URL = config('DATABASE_URL', default='postgresql://localhost/localdb')
+
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL)
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
