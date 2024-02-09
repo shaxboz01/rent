@@ -15,6 +15,7 @@ import os
 import environ
 import dj_database_url
 from dj_config_url import config
+from django.contrib.auth.models import User
 
 env = environ.Env()
 environ.Env.read_env()
@@ -152,7 +153,7 @@ STATICFILES_DIRS = [os.path.join('static')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
+AUTH_USER_MODEL = (User)
 # FOR MEDIA
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join( BASE_DIR,   "static /")
